@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080d19">
+<title>LEVELUP | Gaming PC Fundraiser</title>
+<style>
+:root{--bg:#080d19;--card:#111a2b;--muted:#aab6ca;--cyan:#49e3df;--purple:#9b78ff}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% 5%,#19264a 0,transparent 35%),var(--bg);color:#f5f7ff;font-family:Tahoma,Arial,sans-serif;line-height:1.7}
+.wrap{width:min(1050px,92%);margin:auto}.nav{padding:22px 0;display:flex;justify-content:space-between;align-items:center}.logo{font-weight:800;font-size:20px}.logo span{color:var(--cyan)}.tag{color:var(--muted);font-size:13px}
+.hero{display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center;padding:42px 0 55px}.eyebrow{color:var(--cyan);font-weight:bold;font-size:14px}.hero h1{font-size:clamp(32px,5vw,54px);line-height:1.2;margin:12px 0}.hero p{color:var(--muted);font-size:17px;max-width:570px}.visual{background:linear-gradient(145deg,#182641,#0c1424);border:1px solid #293958;border-radius:26px;padding:18px;box-shadow:0 25px 70px #0008}
+.visual svg{width:100%;height:auto;display:block}.panel{background:var(--card);border:1px solid #24324b;border-radius:22px;padding:28px;margin-bottom:45px}.stats{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}.stat small{color:var(--muted);display:block}.stat strong{font-size:25px}.progress{height:14px;background:#26334a;border-radius:30px;overflow:hidden;margin:20px 0 10px}.bar{height:100%;width:0%;background:linear-gradient(90deg,var(--purple),var(--cyan));border-radius:30px;transition:width .5s}.percent{color:var(--cyan);font-weight:bold}.donate{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:28px}.donate h2{margin-top:0}.amounts{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0}.amounts button{background:#1b2941;color:white;border:1px solid #344663;border-radius:10px;padding:10px 17px;cursor:pointer}.amounts button.active{border-color:var(--cyan);background:#153b46}.field{width:100%;padding:14px;background:#0b1322;color:white;border:1px solid #344663;border-radius:10px;font-size:16px;margin:7px 0 14px}.primary{border:0;border-radius:12px;padding:14px 22px;background:linear-gradient(90deg,#7b65ef,#36cfcf);color:#07111b;font-size:16px;font-weight:800;cursor:pointer;width:100%}.note{font-size:12px;color:var(--muted);margin-top:12px}.why{color:var(--muted);font-size:15px}.footer{text-align:center;color:#78869d;padding:10px 0 35px;font-size:12px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;padding-top:20px}.visual{max-width:520px;margin:auto}.donate{grid-template-columns:1fr}.panel{padding:20px}.nav{align-items:flex-start;gap:10px;flex-direction:column}}
+
+.language-screen{position:fixed;inset:0;z-index:10;background:rgba(5,9,18,.97);display:flex;align-items:center;justify-content:center;padding:22px}
+.language-box{width:min(430px,100%);text-align:center;background:#111a2b;border:1px solid #344663;border-radius:24px;padding:34px;box-shadow:0 25px 80px #0009}
+.language-box h1{font-size:27px;margin:0 0 8px}.language-box p{color:var(--muted);margin:0 0 24px}.language-actions{display:flex;gap:12px}.language-actions button{flex:1;padding:14px;border:1px solid #344663;border-radius:12px;background:#1b2941;color:white;font-size:17px;font-weight:bold;cursor:pointer}.language-actions button:hover{border-color:var(--cyan)}
+.wallet-box{margin-top:22px;padding:16px;border:1px dashed #405779;border-radius:14px;background:#0b1322}.wallet-row{display:flex;gap:9px}.wallet-row input{flex:1;min-width:0;margin:0}.copy-btn{padding:0 17px;border:1px solid #344663;border-radius:10px;background:#1b2941;color:white;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="language-screen" id="languageScreen">
+  <div class="language-box"><h1>Choose your language</h1><p>اختر اللغة التي تفضلها / Select your preferred language</p>
+    <div class="language-actions"><button type="button" onclick="setLanguage('ar')">العربية</button><button type="button" onclick="setLanguage('en')">English</button></div>
+  </div>
+</div>
+<div class="wrap">
+<header class="nav"><div class="logo">LEVEL<span>UP</span> 🎮</div><div class="tag" data-i18n="tag">حملة دعم شخصية لبناء جهاز ألعاب</div></header>
+<main>
+<section class="hero">
+<div>
+<div class="eyebrow" data-i18n="eyebrow">كل مساهمة تقرّبني من هدفي</div>
+<h1 data-i18n="headline">ساعدني أبني<br>PC Gaming أحلامي</h1>
+<p data-i18n="intro">أجمع التبرعات للوصول إلى جهاز كمبيوتر مخصص للألعاب وصناعة المحتوى. هدفي هو <b>3,000 دولار</b>، وأي مساهمة مهما كان حجمها تصنع فرقاً كبيراً. شكراً لدعمكم ❤️</p>
+</div>
+<div class="visual" aria-label="رسم توضيحي لجهاز كمبيوتر ألعاب">
+<svg viewBox="0 0 520 390" role="img" aria-label="كمبيوتر ألعاب بإضاءة RGB">
+<defs><linearGradient id="case" x2="1" y2="1"><stop stop-color="#263b60"/><stop offset="1" stop-color="#101a2d"/></linearGradient><linearGradient id="glow"><stop stop-color="#a16cff"/><stop offset="1" stop-color="#42e8e0"/></linearGradient></defs>
+<ellipse cx="260" cy="344" rx="190" ry="19" fill="#02050b" opacity=".7"/>
+<rect x="155" y="35" width="230" height="290" rx="19" fill="url(#case)" stroke="#60769d" stroke-width="3"/>
+<rect x="174" y="53" width="191" height="253" rx="12" fill="#0a1220" stroke="#344c70" stroke-width="2"/>
+<rect x="190" y="70" width="158" height="220" rx="8" fill="#111d32"/>
+<circle cx="269" cy="133" r="47" fill="none" stroke="url(#glow)" stroke-width="7"/>
+<circle cx="269" cy="133" r="34" fill="none" stroke="#9a7bff" stroke-width="3" opacity=".8"/>
+<circle cx="269" cy="133" r="8" fill="#d7faff"/>
+<path d="M269 91 L281 123 L313 133 L281 145 L269 177 L257 145 L225 133 L257 123Z" fill="#56e6e2" opacity=".6"/>
+<circle cx="269" cy="228" r="39" fill="none" stroke="#42e8e0" stroke-width="6"/>
+<circle cx="269" cy="228" r="27" fill="none" stroke="#9b78ff" stroke-width="3"/>
+<circle cx="269" cy="228" r="7" fill="#d7faff"/>
+<path d="M269 194 L279 218 L303 228 L279 238 L269 262 L259 238 L235 228 L259 218Z" fill="#a78bfa" opacity=".7"/>
+<rect x="207" y="312" width="126" height="8" rx="4" fill="#49e3df"/>
+<rect x="180" y="330" width="180" height="8" rx="4" fill="#263b60"/>
+<path d="M400 100 L450 100 L450 280 L400 280" fill="none" stroke="#435b81" stroke-width="5" opacity=".6"/>
+<circle cx="425" cy="122" r="5" fill="#49e3df"/><circle cx="425" cy="145" r="5" fill="#9b78ff"/>
+<text x="260" y="375" text-anchor="middle" fill="#aebdd6" font-size="13">GAMING PC • RGB BUILD</text>
+</svg>
+</div>
+</section>
+<section class="panel">
+<div class="stats">
+<div class="stat"><small data-i18n="raisedLabel">المبلغ الذي تم جمعه</small><strong id="raised">$0</strong></div>
+<div class="stat"><small data-i18n="goalLabel">الهدف</small><strong>$3,000</strong></div>
+<div class="stat"><small data-i18n="remainingLabel">المتبقي</small><strong id="remaining">$3,000</strong></div>
+</div>
+<div class="progress"><div class="bar" id="bar"></div></div>
+<div class="percent" id="percent">0% من الهدف</div>
+<div class="donate">
+<div><h2 data-i18n="donateTitle">ساهم في تحقيق الهدف</h2><p class="why" data-i18n="donateIntro">يمكنك دعم الحملة عبر رابط المحفظة الرقمية أدناه.</p>
+</div>
+<div class="note" data-i18n="walletNote">لا تتم معالجة المدفوعات داخل هذا الموقع؛ استخدم رابط المحفظة لإرسال الدعم.</div>
+</div>
+<div><h2 data-i18n="whyTitle">لماذا هذا الدعم؟</h2><p class="why" data-i18n="whyText">أطمح إلى تجميع جهاز قوي يتيح لي لعب الألعاب الحديثة بسلاسة، والتعلم والتجربة في عالم الكمبيوتر. سأشارك تحديثات التقدم مع الداعمين بكل شفافية.</p><p class="why" data-i18n="projectInfo">🎯 <b>الهدف:</b> 3,000 دولار أمريكي<br>🖥️ <b>المشروع:</b> تجميع PC Gaming<br>💜 <b>شكراً:</b> لكل شخص يساهم أو يشارك الحملة.</p></div>
+</div>
+</section>
+
+<section id="walletBox" class="panel" style="margin:0 auto 40px;max-width:900px">
+  <h2 style="margin-top:0;color:#49e3df;direction:ltr;text-align:left">USDT (TRC20)</h2>
+  <div style="display:flex;gap:12px;align-items:center;flex-wrap:wrap;direction:ltr">
+    <code id="walletAddress" style="flex:1;min-width:220px;overflow-wrap:anywhere;background:#0b1322;padding:14px;border-radius:10px;color:#fff;font-size:15px">TSeH9G8VjExA5sAMiXKmp7WKWfMbBQj8Uy</code>
+    <button type="button" id="copyWallet" class="primary" style="width:auto">نسخ / Copy</button>
+  </div>
+  <p id="copyStatus" class="note">انسخ العنوان وأرسل USDT عبر شبكة TRON (TRC20) فقط.</p>
+</section>
+
+</main>
+<footer class="footer" data-i18n="footer">LEVELUP • حملة دعم شخصية — أضف وسيلة دفع موثوقة قبل نشر الصفحة.</footer>
+</div>
+<script>
+const translations={
+ ar:{tag:'حملة دعم شخصية لبناء جهاز ألعاب',eyebrow:'كل مساهمة تقرّبني من هدفي',headline:'ساعدني أبني<br>PC Gaming أحلامي',intro:'أجمع التبرعات للوصول إلى جهاز كمبيوتر مخصص للألعاب وصناعة المحتوى. هدفي هو <b>3,000 دولار</b>، وأي مساهمة مهما كان حجمها تصنع فرقاً كبيراً. شكراً لدعمكم ❤️',raisedLabel:'المبلغ الذي تم جمعه',goalLabel:'الهدف',remainingLabel:'المتبقي',donateTitle:'ساهم في تحقيق الهدف',donateIntro:'يمكنك دعم الحملة عبر رابط المحفظة الرقمية أدناه.',amountLabel:'مبلغ المساهمة بالدولار',donateButton:'متابعة المساهمة',walletTitle:'رابط المحفظة الرقمية',walletPending:'سيظهر رابط المحفظة هنا ويمكنك نسخه بضغطة واحدة.',walletNote:'لا تتم معالجة المدفوعات داخل هذا الموقع؛ استخدم رابط المحفظة لإرسال الدعم.',copy:'نسخ',whyTitle:'لماذا هذا الدعم؟',whyText:'أطمح إلى تجميع جهاز قوي يتيح لي لعب الألعاب الحديثة بسلاسة، والتعلم والتجربة في عالم الكمبيوتر. سأشارك تحديثات التقدم مع الداعمين بكل شفافية.',projectInfo:'🎯 <b>الهدف:</b> 3,000 دولار أمريكي<br>🖥️ <b>المشروع:</b> تجميع PC Gaming<br>💜 <b>شكراً:</b> لكل شخص يساهم أو يشارك الحملة.',footer:'LEVELUP • حملة دعم شخصية — أضف وسيلة دفع موثوقة قبل نشر الصفحة.',percent:'% من الهدف',invalid:'يرجى إدخال مبلغ صحيح.',demo:'هذه نسخة تجريبية فقط. أرسل رابط المحفظة لإضافته، ولا تتم معالجة المدفوعات تلقائياً.'},
+ en:{tag:'Personal fundraiser for a gaming PC',eyebrow:'Every contribution brings me closer to my goal',headline:'Help me build my<br>dream gaming PC',intro:'I’m raising funds for a PC dedicated to gaming and content creation. My goal is <b>$3,000</b>. Every contribution, no matter the size, makes a difference. Thank you for your support! ❤️',raisedLabel:'Amount raised',goalLabel:'Goal',remainingLabel:'Remaining',donateTitle:'Help reach the goal',donateIntro:'You can support the campaign using the digital wallet link below.',amountLabel:'Contribution amount (USD)',donateButton:'Continue',walletTitle:'Digital wallet link',walletPending:'The wallet link will appear here and can be copied with one click.',walletNote:'Payments are not processed on this site; use the wallet link to send your support.',copy:'Copy',whyTitle:'Why support this project?',whyText:'I’m hoping to build a powerful PC for playing modern games, learning, and exploring the world of computers. I’ll share progress updates with supporters transparently.',projectInfo:'🎯 <b>Goal:</b> $3,000 USD<br>🖥️ <b>Project:</b> Gaming PC build<br>💜 <b>Thanks:</b> To everyone who contributes or shares this campaign.',footer:'LEVELUP • Personal fundraiser — Add a trusted payment method before publishing.',percent:'% of goal',invalid:'Please enter a valid amount.',demo:'This is a demo page. Send me your wallet link to add it. Payments are not processed automatically.'}
+};
+function setLanguage(lang){const t=translations[lang]||translations.ar;document.documentElement.lang=lang;document.documentElement.dir=lang==='ar'?'rtl':'ltr';document.querySelectorAll('[data-i18n]').forEach(el=>{const k=el.dataset.i18n;if(t[k])el.innerHTML=t[k];});document.getElementById('languageScreen').style.display='none';document.getElementById('percent').textContent=(raised/3000*100).toFixed(1)+t.percent;window.currentLanguage=lang;}
+let raised=0;const goal=3000;
+function update(){const pct=Math.min(100,raised/goal*100);document.getElementById('raised').textContent='$'+raised.toLocaleString('en-US');document.getElementById('remaining').textContent='$'+Math.max(0,goal-raised).toLocaleString('en-US');document.getElementById('bar').style.width=pct+'%';document.getElementById('percent').textContent=pct.toFixed(1)+(window.currentLanguage==='en'?'% of goal':'% من الهدف');}
+document.getElementById('copyWallet').addEventListener('click',async()=>{const input=document.getElementById('walletLink');if(!input.value){alert(window.currentLanguage==='en'?'The wallet link has not been added yet.':'لم تتم إضافة رابط المحفظة بعد.');return;}try{await navigator.clipboard.writeText(input.value);alert(window.currentLanguage==='en'?'Wallet link copied!':'تم نسخ رابط المحفظة!');}catch(e){input.select();document.execCommand('copy');alert(window.currentLanguage==='en'?'Wallet link copied!':'تم نسخ رابط المحفظة!');}});
+update();
+</script>
+
+
+
+
+<script>
+(function () {
+  const button = document.getElementById('copyWallet');
+  const address = document.getElementById('walletAddress');
+  const status = document.getElementById('copyStatus');
+  if (!button || !address) return;
+
+  async function copyToClipboard(value) {
+    // Preferred method: Clipboard API (requires HTTPS or localhost).
+    if (navigator.clipboard && window.isSecureContext) {
+      await navigator.clipboard.writeText(value);
+      return true;
+    }
+
+    // Fallback for browsers where Clipboard API is unavailable.
+    const field = document.createElement('textarea');
+    field.value = value;
+    field.setAttribute('readonly', '');
+    field.style.position = 'fixed';
+    field.style.opacity = '0';
+    field.style.pointerEvents = 'none';
+    document.body.appendChild(field);
+    field.focus();
+    field.select();
+    field.setSelectionRange(0, field.value.length);
+
+    let copied = false;
+    try {
+      copied = document.execCommand('copy');
+    } finally {
+      document.body.removeChild(field);
+    }
+    if (!copied) throw new Error('Clipboard copy failed');
+    return true;
+  }
+
+  button.addEventListener('click', async function () {
+    const value = address.textContent.trim();
+    const originalText = button.textContent;
+    try {
+      await copyToClipboard(value);
+      button.textContent = 'تم النسخ ✓ / Copied';
+      if (status) status.textContent = 'تم نسخ عنوان المحفظة إلى الحافظة بنجاح.';
+    } catch (error) {
+      if (status) status.textContent = 'تعذّر النسخ تلقائياً. اضغط مطولاً على العنوان وانسخه يدوياً.';
+    }
+    window.setTimeout(() => { button.textContent = originalText; }, 2200);
+  });
+})();
+</script>
+
+</body></html>
